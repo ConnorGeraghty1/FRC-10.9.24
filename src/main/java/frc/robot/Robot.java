@@ -38,8 +38,6 @@ public class Robot extends TimedRobot {
     m_leftMotor1.follow(m_leftMotor);
     m_rightMotor1.follow(m_rightMotor, true); 
 
-    m_robotDrive = new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
-    controller = new XboxController(0);
     
     
     SendableRegistry.addChild(m_robotDrive, m_leftMotor);
@@ -61,6 +59,10 @@ public class Robot extends TimedRobot {
     m_leftMotor.burnFlash();
     m_rightMotor1.burnFlash();
     m_leftMotor1.burnFlash();
+
+    
+    m_robotDrive = new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
+    controller = new XboxController(0);
 
   }
 
